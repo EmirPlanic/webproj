@@ -78,6 +78,60 @@ document.getElementById("saveBoardBtn").addEventListener("click", () => {
     });
 });
 
+document.getElementById("savePdfBtn").addEventListener("click", () => {
+    html2canvas(document.body).then(canvas => {
+        const slika = canvas.toDataURL("image/png");
+        const win = window.open("", "_blank");
+        win.document.write("<html><head><title>Kanban PDF</title></head><body style='margin:0;text-align:center;'>");
+        win.document.write("<img src='" + slika + "' style='max-width:100%;'>");
+        win.document.write("</body></html>");
+        win.document.close();
+        win.focus();
+        win.print();
+    });
+});
+
+const mailModal = document.getElementById("mailModal");
+const mailInput = document.getElementById("mailInput");
+
+function getKanbanTekst() {
+    let tekst = "Kanban ploca - IPI Akademija\n\n";
+    document.querySelectorAll(".column").forEach(col => {
+        const naslov = col.querySelector("h2").textContent;
+        tekst += naslov + ":\n";
+        col.querySelectorAll(".task").forEach(task => {
+            tekst += "- " + task.textContent + "\n";
+        });
+        tekst += "\n";
+    });
+    return tekst;
+}
+
+document.getElementById("sendMailBtn").addEventListener("click", () => {
+    mailModal.style.display = "block";
+    mailInput.value = "";
+    mailInput.focus();
+});
+
+document.getElementById("mailSend").addEventListener("click", () => {
+    const email = mailInput.value.trim();
+    if (email === "") return;
+
+    const body = encodeURIComponent(getKanbanTekst());
+    window.location.href = "mailto:" + email + "?subject=" + encodeURIComponent("Kanban Board - IPI Akademija") + "&body=" + body;
+    mailModal.style.display = "none";
+});
+
+document.getElementById("mailCancel").addEventListener("click", () => {
+    mailModal.style.display = "none";
+});
+
+window.addEventListener("click", e => {
+    if (e.target === mailModal) {
+        mailModal.style.display = "none";
+    }
+});
+
 const script = document.createElement("script");
 script.src = "https://cdnjs.cloudflare.com/ajax/libs/html2canvas/1.4.1/html2canvas.min.js";
 document.body.appendChild(script);

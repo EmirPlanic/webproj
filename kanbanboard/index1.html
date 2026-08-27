@@ -11,7 +11,9 @@
 
     <div class="buttons">
         <button id="addTaskBtn" type="button">Dodaj zadatak</button>
-        <button id="saveBoardBtn" type="button">Snimi</button>
+        <button id="saveBoardBtn" type="button">Snimi PNG</button>
+        <button id="savePdfBtn" type="button">Snimi kao PDF</button>
+        <button id="sendMailBtn" type="button">Posalji mailom</button>
         <button id="clearBoardBtn" type="button">Ocisti plocu</button>
     </div>
 
@@ -48,6 +50,17 @@
             <div class="modal-buttons">
                 <button id="clearYes" type="button">Da - Ocisti plocu</button>
                 <button id="clearNo" type="button">Ne - Cancel</button>
+            </div>
+        </div>
+    </div>
+
+    <div id="mailModal" class="modal">
+        <div class="modal-content">
+            <h3>Posalji mailom</h3>
+            <input type="email" id="mailInput" placeholder="Unesite email adresu">
+            <div class="modal-buttons">
+                <button id="mailSend" type="button">Posalji</button>
+                <button id="mailCancel" type="button">Ponisti</button>
             </div>
         </div>
     </div>

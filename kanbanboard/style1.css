@@ -1,13 +1,13 @@
 body {
     font-family: Arial, sans-serif;
-    background: #f2f2f2;
+    background: linear-gradient(180deg, #eef1f5, #dde6f0);
     margin: 0;
     padding: 20px;
     text-align: center;
 }
 
 h1 {
-    color: #333;
+    color: #1a3a5c;
 }
 
 .buttons {
@@ -18,14 +18,14 @@ button {
     padding: 10px 20px;
     margin: 5px;
     border: none;
-    background: #3498db;
+    background: #2d5a87;
     color: white;
     border-radius: 5px;
     cursor: pointer;
 }
 
 button:hover {
-    background: #217dbb;
+    background: #1a3a5c;
 }
 
 .board {
@@ -113,14 +113,14 @@ button:hover {
     padding: 8px 15px;
     margin: 0 10px;
     border: none;
-    background: #3498db;
+    background: #2d5a87;
     color: white;
     border-radius: 6px;
     cursor: pointer;
 }
 
 .modal-buttons button:hover {
-    background: #217dbb;
+    background: #1a3a5c;
 }
 
 #clearModal .modal-content p {
