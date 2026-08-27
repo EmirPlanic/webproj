@@ -1,0 +1,42 @@
+body.page-body {
+    margin: 0;
+    padding: 24px;
+    font-family: "Segoe UI", Tahoma, sans-serif;
+    background: #fff;
+    color: #333;
+    line-height: 1.6;
+}
+
+.page-wrap {
+    max-width: 900px;
+    margin: 0 auto;
+}
+
+.page-wrap h1 {
+    color: #1a3a5c;
+    margin-bottom: 16px;
+}
+
+.intro {
+    font-size: 17px;
+    margin-bottom: 28px;
+}
+
+.info-cards {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+    gap: 18px;
+}
+
+.card {
+    background: #f4f7fb;
+    border-left: 4px solid #2d5a87;
+    padding: 18px;
+    border-radius: 8px;
+}
+
+.card h2 {
+    font-size: 18px;
+    color: #1a3a5c;
+    margin-bottom: 8px;
+}
