@@ -136,3 +136,39 @@ clearBtn.addEventListener("click", () => {
     localStorage.removeItem("visionBoardItems");
   }
 });
+
+document.getElementById("pdfBtn").addEventListener("click", () => {
+  window.print();
+});
+
+const mailModal = document.getElementById("mailModal");
+const mailInput = document.getElementById("mailInput");
+
+document.getElementById("mailBtn").addEventListener("click", () => {
+  mailModal.style.display = "block";
+  mailInput.value = "";
+  mailInput.focus();
+});
+
+document.getElementById("mailSend").addEventListener("click", () => {
+  const email = mailInput.value.trim();
+  if (email === "") return;
+
+  const items = document.querySelectorAll("#board > div").length;
+  const body = encodeURIComponent(
+    "Vision Board sa IPI Akademija stranice.\nBroj elemenata na ploci: " + items
+  );
+
+  window.location.href = "mailto:" + email + "?subject=" + encodeURIComponent("Vision Board - IPI Akademija") + "&body=" + body;
+  mailModal.style.display = "none";
+});
+
+document.getElementById("mailCancel").addEventListener("click", () => {
+  mailModal.style.display = "none";
+});
+
+window.addEventListener("click", (e) => {
+  if (e.target === mailModal) {
+    mailModal.style.display = "none";
+  }
+});

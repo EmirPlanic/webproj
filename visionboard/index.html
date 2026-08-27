@@ -15,13 +15,24 @@
         <button id="addQuoteBtn" type="button">Citat</button>
         <button id="saveBtn" type="button">Spremi</button>
         <button id="clearBtn" type="button">Ocisti plocu</button>
+        <button id="pdfBtn" type="button">Snimi kao PDF</button>
+        <button id="mailBtn" type="button">Posalji mailom</button>
     </div>
 
     <div id="board"></div>
 
-    <footer>
-        Laboratorijska vjezba 7 - Vision Board
-    </footer>
+    <div id="mailModal" class="modal">
+        <div class="modal-content">
+            <h3>Posalji mailom</h3>
+            <input type="email" id="mailInput" placeholder="Unesite email adresu">
+            <div class="modal-buttons">
+                <button id="mailSend" type="button">Posalji</button>
+                <button id="mailCancel" type="button">Ponisti</button>
+            </div>
+        </div>
+    </div>
+
+    <footer>IPI Akademija - Vision Board</footer>
 
     <script src="javascript.js"></script>
 </body>
