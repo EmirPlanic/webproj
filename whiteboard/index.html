@@ -20,14 +20,24 @@
         <button id="btnBrisi" type="button">Brisi</button>
         <button id="btnOcisti" type="button">Ocisti</button>
         <button id="btnPng" type="button">Spremi PNG</button>
-        <button id="btnPdf" type="button">Spremi PDF</button>
+        <button id="btnPdf" type="button">Snimi kao PDF</button>
+        <button id="btnMail" type="button">Posalji mailom</button>
     </div>
 
     <canvas id="ploca" width="900" height="500"></canvas>
 
-    <footer>
-        Laboratorijska vjezba 7 - Web programiranje
-    </footer>
+    <div id="mailModal" class="modal">
+        <div class="modal-content">
+            <h3>Posalji mailom</h3>
+            <input type="email" id="mailInput" placeholder="Unesite email adresu">
+            <div class="modal-buttons">
+                <button id="mailSend" type="button">Posalji</button>
+                <button id="mailCancel" type="button">Ponisti</button>
+            </div>
+        </div>
+    </div>
+
+    <footer>IPI Akademija - Interaktivni Whiteboard</footer>
 
     <script src="javascript.js"></script>
 </body>

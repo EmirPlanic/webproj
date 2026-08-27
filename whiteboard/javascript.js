@@ -133,3 +133,38 @@ btnPdf.addEventListener('click', function () {
     win.focus();
     win.print();
 });
+
+var mailModal = document.getElementById('mailModal');
+var mailInput = document.getElementById('mailInput');
+var btnMail = document.getElementById('btnMail');
+
+btnMail.addEventListener('click', function () {
+    mailModal.style.display = 'block';
+    mailInput.value = '';
+    mailInput.focus();
+});
+
+document.getElementById('mailSend').addEventListener('click', function () {
+    var email = mailInput.value.trim();
+    if (email === '') {
+        return;
+    }
+
+    var poruka = encodeURIComponent(
+        'Whiteboard crtez sa IPI Akademija stranice.\n' +
+        'PNG sliku mozete preuzeti dugmetom Spremi PNG prije slanja.'
+    );
+
+    window.location.href = 'mailto:' + email + '?subject=' + encodeURIComponent('Whiteboard - IPI Akademija') + '&body=' + poruka;
+    mailModal.style.display = 'none';
+});
+
+document.getElementById('mailCancel').addEventListener('click', function () {
+    mailModal.style.display = 'none';
+});
+
+window.addEventListener('click', function (e) {
+    if (e.target === mailModal) {
+        mailModal.style.display = 'none';
+    }
+});
