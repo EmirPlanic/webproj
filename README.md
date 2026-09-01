@@ -1,6 +1,6 @@
 # IPI Akademija — Web Programiranje, Projekat 1
 
-Ovo je dokumentacija mog projekta. Stranica je radjena u HTML-u, CSS-u i JavaScriptu kroz semestar web programiranja.
+Ovo je dokumentacija mog projekta. Stranica je radjena u HTML-u, CSS-u i JavaScriptu.
 
 Glavna ideja je da imas jednu stranicu sa menijem, a sve ostalo se otvara u sredini ekrana. Tu su i alati iz lab vjezbe 7: whiteboard, vision board i kanban.
 
